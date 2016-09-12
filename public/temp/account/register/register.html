@@ -1,0 +1,30 @@
+<div class="container">
+    <form class="form-signin" action="/account/registerPost" method="post" role="form">
+        <h2 class="form-signin-heading">网站注册</h2>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <input type="password" id="passwords" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+            <label>
+            <input type="checkbox" value="remember-me"><a href="#">网站注册须知</a>
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" id="register" type="button">注册</button>
+    </form>
+</div>
+<!--<script>
+    $(function() {
+        $('#register').click(function() {
+            let password = $("#password").val();
+            let passwords = $("#passwords").val();
+            if (password.length == 0 || passwords.length == 0) {
+                alert_layer('密码项不得为空!');
+            } else if (password != passwords) {
+                console.log('1');
+                alert_layer('两次密码输入不一致!');
+            } else {
+                alert_layer('密码一致')
+            }
+        })
+    })
+</script>-->

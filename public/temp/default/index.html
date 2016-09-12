@@ -1,0 +1,45 @@
+<div ng-controller="default_controller">
+<div class="seach" >
+    <p><input type="text" ng-model="seachText" /><button ng-click="Seach(seachText)">查询</button></p>
+    <h1>
+            搜索你所想要寻找的音乐吧，骚年们！
+        </h1>
+
+
+</div>
+<div class="music_list">
+    <table>
+        <tr>
+            <th>歌曲名</th>
+            <th>歌手</th>
+            <th>专辑</th>
+            <th>时长</th>
+        </tr>
+        <tr ng-repeat="item in musicss">
+            <td><a ng-click="play($event)" singer="{{ item.singer }}"  hash="{{ item.hash }}" ng-href="">{{ item.name }}</a></td>
+            <td>{{ item.singer }}</td>
+            <td>{{ item.album }}</td>
+            <td>{{ item.time }}</td>
+        </tr>
+    </table> 
+</div>
+    <div class="list_div">
+        <ul>
+            <li>
+                <a ng-click="PageSize($event)"  href="" PageSize="1">1</a>
+            </li>
+            <li>
+                <a ng-click="PageSize($event)" href="" PageSize="2">2</a>
+            </li>
+            <li>
+                <a ng-click="PageSize($event)" href="" PageSize="3">3</a>
+            </li>
+            <li>
+                <a ng-click="PageSize($event)" href="" PageSize="4">4</a>
+            </li>
+            <li>
+                <a ng-click="PageSize($event)" href="" PageSize="5">5</a>
+            </li>
+        </ul>
+    </div>
+</div>
