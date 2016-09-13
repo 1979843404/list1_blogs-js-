@@ -6,26 +6,22 @@ var ejs = require('ejs');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var session = require('express-session'); // session持久化
-var MongoStore = require('connect-mongo/es5')(session);
-var dbUrl = 'mongodb://localhost:27017/zjx';
-mongoose.connect(dbUrl);
+var session = require('express-session');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://127.0.0.1:27017/zjx1');
 var app = express();
+
 mongoose.connection.on('error', function(error) {
     console.log('数据库连接失败' + error);
 });
 mongoose.connection.once('open', function() {
     console.log('连接数据库成功!');
 });
+require('./models/blogs_model.js');
 
 app.use(session({
-    secret: 'SECRET',
-    cookie: { maxAge: 60 * 60 * 1000 },
-    saveUninitialized: true,
-    store: new MongoStore({
-        url: dbUrl,
-        collection: 'sessions'
-    })
+    secret: 'zjx', //secret的值建议使用随机字符串
+    cookie: { maxAge: 60 * 1000 * 30 } // 过期时间（毫秒）
 }));
 
 // view engine setup

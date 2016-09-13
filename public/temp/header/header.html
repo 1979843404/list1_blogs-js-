@@ -16,9 +16,14 @@
                         <a ng-href="{{item.url}}">{{item.name}}</a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" ng-if="loginshow">
                     <li><a href="#/login">登录</a></li>
                     <li><a href="#/register">注册</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" ng-if="username">
+                    <li><a href="">欢迎您，尊贵的：</a></li>
+                    <li><a href="">{{ users.username }} 先生 </a></li>
+                    <li><a href="" ng-click="LoginOut()">退出</a></li>
                 </ul>
             </div>
     </nav>

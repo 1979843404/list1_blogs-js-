@@ -21,8 +21,10 @@
     function bindRouter($stateProvider) {
         $stateProvider
             .state('login', {
+                controller: 'LoginCtrl',
                 url: '/login',
                 templateUrl: './temp/account/login/login.html'
+
             }).state('register', {
                 url: '/register',
                 templateUrl: './temp/account/register/register.html'

@@ -14,5 +14,5 @@ module.exports = function(app) {
         // })
     app.post('/account/loginPost', account.login);
 
-
+    app.post('/account/loginOut', account.loginOut);
 }
